@@ -1,0 +1,680 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.0 r1840935">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Test Plan" enabled="true">
+      <stringProp name="TestPlan.comments"></stringProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.tearDown_on_shutdown">true</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">true</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+      <stringProp name="TestPlan.user_define_classpath"></stringProp>
+    </TestPlan>
+    <hashTree>
+      <DebugPostProcessor guiclass="TestBeanGUI" testclass="DebugPostProcessor" testname="Debug PostProcessor" enabled="true">
+        <boolProp name="displayJMeterProperties">false</boolProp>
+        <boolProp name="displayJMeterVariables">true</boolProp>
+        <boolProp name="displaySamplerProperties">true</boolProp>
+        <boolProp name="displaySystemProperties">false</boolProp>
+      </DebugPostProcessor>
+      <hashTree/>
+      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments">
+          <elementProp name="pickValuesFromManuallyDefinedObjects" elementType="Argument">
+            <stringProp name="Argument.name">pickValuesFromManuallyDefinedObjects</stringProp>
+            <stringProp name="Argument.value">yes</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="apiId_1" elementType="Argument">
+            <stringProp name="Argument.name">apiId_1</stringProp>
+            <stringProp name="Argument.value">0</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="outputFileName" elementType="Argument">
+            <stringProp name="Argument.name">outputFileName</stringProp>
+            <stringProp name="Argument.value">C:\ACORN\LinearExpansion\objectModel\transposedCSV\output.csv</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="intermediateFileName" elementType="Argument">
+            <stringProp name="Argument.name">intermediateFileName</stringProp>
+            <stringProp name="Argument.value">C:\ACORN\LinearExpansion\objectModel\transposedCSV\intermediateCSV.csv</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="objectAdditionFileName" elementType="Argument">
+            <stringProp name="Argument.name">objectAdditionFileName</stringProp>
+            <stringProp name="Argument.value">C:\ACORN\LinearExpansion\objectModel\objectDefinition.csv</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="objectModelFileName" elementType="Argument">
+            <stringProp name="Argument.name">objectModelFileName</stringProp>
+            <stringProp name="Argument.value">C:\ACORN\LinearExpansion\objectModel\objectModel.csv</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+        </collectionProp>
+      </Arguments>
+      <hashTree/>
+      <JDBCDataSource guiclass="TestBeanGUI" testclass="JDBCDataSource" testname="JDBC Connection Configuration" enabled="true">
+        <boolProp name="autocommit">true</boolProp>
+        <stringProp name="checkQuery"></stringProp>
+        <stringProp name="connectionAge">5000</stringProp>
+        <stringProp name="dataSource">linearExpansion</stringProp>
+        <stringProp name="dbUrl">jdbc:mysql://corebankingtestdb.cibbk8kxm3lv.eu-west-1.rds.amazonaws.com</stringProp>
+        <stringProp name="driver">com.mysql.jdbc.Driver</stringProp>
+        <boolProp name="keepAlive">true</boolProp>
+        <stringProp name="password">imV6KziczQ</stringProp>
+        <stringProp name="poolMax">10</stringProp>
+        <stringProp name="timeout">10000</stringProp>
+        <stringProp name="transactionIsolation">DEFAULT</stringProp>
+        <stringProp name="trimInterval">60000</stringProp>
+        <stringProp name="username">linearex</stringProp>
+      </JDBCDataSource>
+      <hashTree/>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group - Define objects and its possible values" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <kg.apc.jmeter.samplers.DummySampler guiclass="kg.apc.jmeter.samplers.DummySamplerGui" testclass="kg.apc.jmeter.samplers.DummySampler" testname="Create Insert Statements for Objects, attributes and values" enabled="true">
+          <boolProp name="WAITING">true</boolProp>
+          <boolProp name="SUCCESFULL">true</boolProp>
+          <stringProp name="RESPONSE_CODE">200</stringProp>
+          <stringProp name="RESPONSE_MESSAGE">OK</stringProp>
+          <stringProp name="REQUEST_DATA">Dummy Sampler used to simulate requests and responses
+without actual network activity. This helps debugging tests.</stringProp>
+          <stringProp name="RESPONSE_DATA">Dummy Sampler used to simulate requests and responses
+without actual network activity. This helps debugging tests.</stringProp>
+          <stringProp name="RESPONSE_TIME">${__Random(50,500)}</stringProp>
+          <stringProp name="LATENCY">${__Random(1,50)}</stringProp>
+          <stringProp name="CONNECT">${__Random(1,5)}</stringProp>
+        </kg.apc.jmeter.samplers.DummySampler>
+        <hashTree>
+          <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell PostProcessor" enabled="true">
+            <boolProp name="resetInterpreter">false</boolProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="script">BufferedReader br = new BufferedReader(new FileReader(vars.get(&quot;objectAdditionFileName&quot;)));
+//log.info(&quot;1&quot;); 
+String line;
+int count=1;
+int AttributeCount=1;
+String[] inputSplitLine;
+while ((line=br.readLine())!=null) {
+	inputSplitLine = line.split(&quot;,&quot;);
+//	log.info(&quot;2&quot;);
+	String insertObjectQuery =&quot;insert into objects(objectName,isActive) select &apos;&quot;+inputSplitLine[0]+&quot;&apos;,1 WHERE NOT EXISTS (SELECT 1 FROM objects where objectName=&apos;&quot;+inputSplitLine[0]+&quot;&apos; and isActive=1)&quot;;
+//	log.info(&quot;3&quot;);
+	vars.put(&quot;insertObjectQuery_&quot;+String.valueOf(count),insertObjectQuery);
+//	log.info(&quot;4&quot;);
+	String insertObjectAttributeQuery = &quot;insert into objectAttributes(FK_objectId,objectAttribute,isActive) select &quot;+
+	&quot; (select objectId from objects where objectName=&apos;&quot;+inputSplitLine[0]+&quot;&apos; and isActive=1),&apos;&quot;+inputSplitLine[1]+&quot;&apos;,1 &quot;+
+	&quot; where not exists (select 1 from objectAttributes where FK_objectId=	(select objectId from objects where objectName=&apos;&quot;+
+	inputSplitLine[0]+&quot;&apos; and isActive=1) and objectAttribute=&apos;&quot;+inputSplitLine[1]+&quot;&apos; and isActive=1)&quot;;
+//	log.info(&quot;5&quot;);
+	vars.put(&quot;insertObjectAttributeQuery_&quot;+String.valueOf(count),insertObjectAttributeQuery);
+//	log.info(&quot;6&quot;);
+	for (int i=2;i&lt;inputSplitLine.length;i++) {
+		String insertObjectValueQuery = &quot;insert into objectValues(FK_objectAttributeId,objectValue,isActive) select &quot;+
+		&quot;(select objectAttributeId from objectAttributes where objectAttribute=&apos;&quot;+inputSplitLine[1]+&quot;&apos; and isActive=1),&apos;&quot;+
+		inputSplitLine[i]+&quot;&apos;,1 where not exists (select  1 from objectValues where objectValue=&apos;&quot;+inputSplitLine[i]+&quot;&apos; and isActive=1 and &quot;+
+		&quot;FK_objectAttributeId=(select objectAttributeId from objectAttributes where isActive=1 and objectAttribute=&apos;&quot;+inputSplitLine[1]+&quot;&apos;))&quot;;
+//		log.info(&quot;7&quot;);
+		vars.put(&quot;insertObjectValueQuery_&quot;+String.valueOf(AttributeCount),insertObjectValueQuery);
+//		log.info(&quot;8&quot;);
+		AttributeCount++;
+//		log.info(&quot;9&quot;);
+	}
+	count++;
+}</stringProp>
+          </BeanShellPostProcessor>
+          <hashTree/>
+        </hashTree>
+        <ForeachController guiclass="ForeachControlPanel" testclass="ForeachController" testname="ForEach Controller - Objects" enabled="true">
+          <stringProp name="ForeachController.inputVal">insertObjectQuery</stringProp>
+          <stringProp name="ForeachController.returnVal">insertObjectQuery</stringProp>
+          <boolProp name="ForeachController.useSeparator">true</boolProp>
+          <stringProp name="ForeachController.startIndex">0</stringProp>
+        </ForeachController>
+        <hashTree>
+          <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="Insert New Objects" enabled="true">
+            <stringProp name="dataSource">linearExpansion</stringProp>
+            <stringProp name="query">${insertObjectQuery}</stringProp>
+            <stringProp name="queryArguments"></stringProp>
+            <stringProp name="queryArgumentsTypes"></stringProp>
+            <stringProp name="queryTimeout"></stringProp>
+            <stringProp name="queryType">Update Statement</stringProp>
+            <stringProp name="resultSetHandler">Store as String</stringProp>
+            <stringProp name="resultVariable">result</stringProp>
+            <stringProp name="variableNames"></stringProp>
+          </JDBCSampler>
+          <hashTree/>
+        </hashTree>
+        <ForeachController guiclass="ForeachControlPanel" testclass="ForeachController" testname="ForEach Controller - Object Attributes" enabled="true">
+          <stringProp name="ForeachController.inputVal">insertObjectAttributeQuery</stringProp>
+          <stringProp name="ForeachController.returnVal">insertObjectAttributeQuery</stringProp>
+          <boolProp name="ForeachController.useSeparator">true</boolProp>
+          <stringProp name="ForeachController.startIndex">0</stringProp>
+        </ForeachController>
+        <hashTree>
+          <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="Insert New Object Attributes" enabled="true">
+            <stringProp name="dataSource">linearExpansion</stringProp>
+            <stringProp name="query">${insertObjectAttributeQuery}</stringProp>
+            <stringProp name="queryArguments"></stringProp>
+            <stringProp name="queryArgumentsTypes"></stringProp>
+            <stringProp name="queryTimeout"></stringProp>
+            <stringProp name="queryType">Update Statement</stringProp>
+            <stringProp name="resultSetHandler">Store as String</stringProp>
+            <stringProp name="resultVariable">result</stringProp>
+            <stringProp name="variableNames"></stringProp>
+          </JDBCSampler>
+          <hashTree/>
+        </hashTree>
+        <ForeachController guiclass="ForeachControlPanel" testclass="ForeachController" testname="ForEach Controller - Object Values" enabled="true">
+          <stringProp name="ForeachController.inputVal">insertObjectValueQuery</stringProp>
+          <stringProp name="ForeachController.returnVal">insertObjectValueQuery</stringProp>
+          <boolProp name="ForeachController.useSeparator">true</boolProp>
+          <stringProp name="ForeachController.startIndex">0</stringProp>
+        </ForeachController>
+        <hashTree>
+          <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="Insert New Object Values" enabled="true">
+            <stringProp name="dataSource">linearExpansion</stringProp>
+            <stringProp name="query">${insertObjectValueQuery}</stringProp>
+            <stringProp name="queryArguments"></stringProp>
+            <stringProp name="queryArgumentsTypes"></stringProp>
+            <stringProp name="queryTimeout"></stringProp>
+            <stringProp name="queryType">Update Statement</stringProp>
+            <stringProp name="resultSetHandler">Store as String</stringProp>
+            <stringProp name="resultVariable">result</stringProp>
+            <stringProp name="variableNames"></stringProp>
+          </JDBCSampler>
+          <hashTree/>
+        </hashTree>
+        <kg.apc.jmeter.samplers.DummySampler guiclass="kg.apc.jmeter.samplers.DummySamplerGui" testclass="kg.apc.jmeter.samplers.DummySampler" testname="Create Insert Statements for Combinations" enabled="true">
+          <boolProp name="WAITING">true</boolProp>
+          <boolProp name="SUCCESFULL">true</boolProp>
+          <stringProp name="RESPONSE_CODE">200</stringProp>
+          <stringProp name="RESPONSE_MESSAGE">OK</stringProp>
+          <stringProp name="REQUEST_DATA">Dummy Sampler used to simulate requests and responses
+without actual network activity. This helps debugging tests.</stringProp>
+          <stringProp name="RESPONSE_DATA">Dummy Sampler used to simulate requests and responses
+without actual network activity. This helps debugging tests.</stringProp>
+          <stringProp name="RESPONSE_TIME">${__Random(50,500)}</stringProp>
+          <stringProp name="LATENCY">${__Random(1,50)}</stringProp>
+          <stringProp name="CONNECT">${__Random(1,5)}</stringProp>
+        </kg.apc.jmeter.samplers.DummySampler>
+        <hashTree>
+          <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell PostProcessor" enabled="true">
+            <boolProp name="resetInterpreter">false</boolProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="script">import java.util.*; 
+int count=1;
+BufferedReader br = new BufferedReader(new FileReader(vars.get(&quot;objectAdditionFileName&quot;)));
+String line;
+ArrayList objectList = new ArrayList();
+Set set = new HashSet();
+String[] inputSplitLine;
+while ((line=br.readLine())!=null) {
+	inputSplitLine = line.split(&quot;,&quot;);
+	objectList.add(inputSplitLine[0]);
+}
+br.close();
+
+set.addAll(objectList);
+Object[] myArr = set.toArray();
+for (int j=0;j&lt;myArr.length;j++) {
+	int freq = Collections.frequency(objectList, myArr[j].toString()); 
+	if (freq&gt;1) {
+		BufferedReader br = new BufferedReader(new FileReader(vars.get(&quot;objectAdditionFileName&quot;)));
+		while ((line=br.readLine())!=null) {
+			inputSplitLine = line.split(&quot;,&quot;);
+			if (inputSplitLine[0].equals(myArr[j].toString())) {
+				for (int k=2;k&lt;inputSplitLine.length;k++) {
+					String insertCombinationsStatement = &quot;insert into combinations(combinationId,FK_objectId,FK_objectAttributeId,FK_objectValueId,isActive) &quot;+
+					&quot;select &quot;+(k-1)+&quot;,(select objectId from objects where objectName=&apos;&quot;+inputSplitLine[0]
+					+&quot;&apos;), (select objectAttributeId from objectAttributes where FK_objectId=(select objectId &quot;+
+					&quot;from objects where objectName=&apos;&quot;+inputSplitLine[0]+&quot;&apos; and isActive=1) and objectAttribute=&apos;&quot;+
+					inputSplitLine[1]+&quot;&apos; and isActive=1),(select objectValueId from objectValues where objectValue=&apos;&quot;+
+					inputSplitLine[k]+&quot;&apos; and FK_objectAttributeId=(select objectAttributeId from objectAttributes where FK_objectId=&quot;+
+					&quot;(select objectId from objects where objectName=&apos;&quot;+inputSplitLine[0]+&quot;&apos; and isActive=1) and objectAttribute=&apos;&quot;+
+					inputSplitLine[1]+&quot;&apos; and isActive=1)),1 where not exists (select 1 from combinations where &quot;+
+					&quot; combinationId=&quot;+(k-1)+&quot; and FK_objectId= (select objectId from objects where objectName=&apos;&quot;+inputSplitLine[0]+&quot;&apos;) &quot;+
+					&quot; and FK_objectAttributeId = (select objectAttributeId from objectAttributes where &quot;+
+					&quot; FK_objectId=(select objectId from objects where objectName=&apos;&quot;+inputSplitLine[0]
+					+&quot;&apos; and isActive=1) and objectAttribute=&apos;&quot;+inputSplitLine[1]+&quot;&apos; and isActive=1) &quot;+
+					&quot; and FK_objectValueId = (select objectValueId from objectValues where objectValue=&apos;&quot;+
+					inputSplitLine[k]+&quot;&apos; and FK_objectAttributeId=(select objectAttributeId from objectAttributes where &quot;+ 
+					&quot; FK_objectId=(select objectId from objects where objectName=&apos;&quot;+inputSplitLine[0]+&quot;&apos; and isActive=1) &quot;+
+					&quot; and objectAttribute=&apos;&quot;+inputSplitLine[1]+&quot;&apos; and isActive=1)) and isActive=1)&quot;;			
+					//log.info(&quot;Query:&quot; +insertCombinationsStatement);
+					vars.put(&quot;insertCombinationsQuery_&quot;+String.valueOf(count),insertCombinationsStatement);
+					count++;
+				}
+				
+			}
+		}
+	}
+	
+}</stringProp>
+          </BeanShellPostProcessor>
+          <hashTree/>
+        </hashTree>
+        <ForeachController guiclass="ForeachControlPanel" testclass="ForeachController" testname="ForEach Controller - Combination Values" enabled="true">
+          <stringProp name="ForeachController.inputVal">insertCombinationsQuery</stringProp>
+          <stringProp name="ForeachController.returnVal">insertCombinationsQuery</stringProp>
+          <boolProp name="ForeachController.useSeparator">true</boolProp>
+          <stringProp name="ForeachController.startIndex">0</stringProp>
+        </ForeachController>
+        <hashTree>
+          <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="Insert Combinations" enabled="true">
+            <stringProp name="dataSource">linearExpansion</stringProp>
+            <stringProp name="query">${insertCombinationsQuery}</stringProp>
+            <stringProp name="queryArguments"></stringProp>
+            <stringProp name="queryArgumentsTypes"></stringProp>
+            <stringProp name="queryTimeout"></stringProp>
+            <stringProp name="queryType">Update Statement</stringProp>
+            <stringProp name="resultSetHandler">Store as String</stringProp>
+            <stringProp name="resultVariable">result</stringProp>
+            <stringProp name="variableNames"></stringProp>
+          </JDBCSampler>
+          <hashTree/>
+        </hashTree>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group - Generate possible values for JSON keys" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config" enabled="true">
+          <stringProp name="delimiter">,</stringProp>
+          <stringProp name="fileEncoding"></stringProp>
+          <stringProp name="filename">${objectModelFileName}</stringProp>
+          <boolProp name="ignoreFirstLine">true</boolProp>
+          <boolProp name="quotedData">false</boolProp>
+          <boolProp name="recycle">true</boolProp>
+          <stringProp name="shareMode">shareMode.all</stringProp>
+          <boolProp name="stopThread">false</boolProp>
+          <stringProp name="variableNames">slNo,apiName,apiVersion,csvFileName</stringProp>
+        </CSVDataSet>
+        <hashTree/>
+        <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="Check if API name already exists in MySQL" enabled="true">
+          <stringProp name="dataSource">linearExpansion</stringProp>
+          <stringProp name="query">select apiId from api where apiName=&apos;${apiName}&apos; and apiversion=&apos;${apiVersion}&apos; and isApiActive=1;</stringProp>
+          <stringProp name="queryArguments"></stringProp>
+          <stringProp name="queryArgumentsTypes"></stringProp>
+          <stringProp name="queryTimeout"></stringProp>
+          <stringProp name="queryType">Select Statement</stringProp>
+          <stringProp name="resultSetHandler">Store as String</stringProp>
+          <stringProp name="resultVariable">resultSet</stringProp>
+          <stringProp name="variableNames">apiId</stringProp>
+        </JDBCSampler>
+        <hashTree/>
+        <IfController guiclass="IfControllerPanel" testclass="IfController" testname="If Controller" enabled="true">
+          <stringProp name="IfController.condition">&quot;${apiId_1}&quot;==&quot;0&quot;</stringProp>
+          <boolProp name="IfController.evaluateAll">false</boolProp>
+        </IfController>
+        <hashTree>
+          <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="Insert API Name" enabled="false">
+            <stringProp name="dataSource">linearExpansion</stringProp>
+            <stringProp name="query">insert into api(apiVersion,apiName,isApiActive) values(&apos;${apiVersion}&apos;,&apos;${apiName}&apos;,1)</stringProp>
+            <stringProp name="queryArguments"></stringProp>
+            <stringProp name="queryArgumentsTypes"></stringProp>
+            <stringProp name="queryTimeout"></stringProp>
+            <stringProp name="queryType">Update Statement</stringProp>
+            <stringProp name="resultSetHandler">Store as String</stringProp>
+            <stringProp name="resultVariable">apiId</stringProp>
+            <stringProp name="variableNames"></stringProp>
+          </JDBCSampler>
+          <hashTree/>
+          <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="Select API Id" enabled="false">
+            <stringProp name="dataSource">linearExpansion</stringProp>
+            <stringProp name="query">select apiId from api where apiName=&apos;${apiName}&apos; and apiversion=&apos;${apiVersion}&apos; and isApiActive=1;</stringProp>
+            <stringProp name="queryArguments"></stringProp>
+            <stringProp name="queryArgumentsTypes"></stringProp>
+            <stringProp name="queryTimeout"></stringProp>
+            <stringProp name="queryType">Select Statement</stringProp>
+            <stringProp name="resultSetHandler">Store as String</stringProp>
+            <stringProp name="resultVariable">resultSet</stringProp>
+            <stringProp name="variableNames">apiId</stringProp>
+          </JDBCSampler>
+          <hashTree/>
+        </hashTree>
+        <kg.apc.jmeter.samplers.DummySampler guiclass="kg.apc.jmeter.samplers.DummySamplerGui" testclass="kg.apc.jmeter.samplers.DummySampler" testname="Identify headers, keys and values" enabled="true">
+          <boolProp name="WAITING">true</boolProp>
+          <boolProp name="SUCCESFULL">true</boolProp>
+          <stringProp name="RESPONSE_CODE">200</stringProp>
+          <stringProp name="RESPONSE_MESSAGE">OK</stringProp>
+          <stringProp name="REQUEST_DATA">Dummy Sampler used to simulate requests and responses
+without actual network activity. This helps debugging tests.</stringProp>
+          <stringProp name="RESPONSE_DATA">{
+  &quot;productId&quot;: &quot;(365) BL&quot;,
+  &quot;principalAmount&quot;: &quot;12000&quot;,
+  &quot;disbursementData&quot;: [
+	{
+		&quot;disbursementPeriod&quot;: 1,
+		&quot;disbursementDate&quot;: &quot;2019-01-01&quot;,
+		&quot;disbursementAmount&quot;: &quot;12000&quot;,
+		&quot;availabilityDate&quot;: &quot;2019-01-01&quot;
+	}
+  ],
+  &quot;repaymentDateMethod&quot;: &quot;ANIVRSRY&quot;, 
+  &quot;daysInMonthType&quot;: &quot;ACTUAL&quot;,
+  &quot;daysInYearType&quot;: &quot;ACTUAL&quot;,
+  &quot;interestCalculationMethod&quot;: &quot;DECLINE&quot;, 
+  &quot;loanModel&quot;: [
+	{
+		&quot;periodNumber&quot;: 1,
+		&quot;periodFrequency&quot;: {
+			&quot;value&quot;: 3,
+			&quot;frequencyThree&quot;:  &quot;MONTHS&quot;
+		},
+		&quot;calculationMethod&quot;: &quot;EMI&quot;,
+		&quot;principalRepayFrequency&quot;: {
+			&quot;value&quot;: 1,
+			&quot;frequencyThree&quot;:  &quot;MONTHS&quot;
+		},
+		&quot;interestRepayFrequency&quot;: {
+			&quot;value&quot;: 1,
+			&quot;frequencyThree&quot;:  &quot;MONTHS&quot;
+		},
+		&quot;interestRateType&quot;: &quot;FIXED&quot;,
+		&quot;interestRate&quot;: 12.00
+    }
+  ]
+}
+</stringProp>
+          <stringProp name="RESPONSE_TIME">${__Random(50,500)}</stringProp>
+          <stringProp name="LATENCY">${__Random(1,50)}</stringProp>
+          <stringProp name="CONNECT">${__Random(1,5)}</stringProp>
+        </kg.apc.jmeter.samplers.DummySampler>
+        <hashTree>
+          <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="Identify headers, keys and values " enabled="true">
+            <stringProp name="filename"></stringProp>
+            <stringProp name="parameters"></stringProp>
+            <boolProp name="resetInterpreter">false</boolProp>
+            <stringProp name="script">//Separate Header &amp; transpose file
+BufferedReader br = new BufferedReader(new FileReader(vars.get(&quot;csvFileName&quot;)));     
+String line;
+String[] inputSplitLine;
+f = new FileOutputStream(vars.get(&quot;intermediateFileName&quot;), false);
+p = new PrintStream(f); 
+this.interpreter.setOut(p); 
+while ((line=br.readLine())!=null) {
+	log.info(&quot;Whole line:&quot;+line);
+	inputSplitLine = line.split(&quot;,&quot;);
+	if (!inputSplitLine[0].equals(&quot;#&quot;)) {
+		log.info(&quot;Size: &quot;+String.valueOf(inputSplitLine.length));
+		if (inputSplitLine.length&gt;=3 &amp;&amp; !inputSplitLine[2].equals(&quot;&quot;)) 
+		{
+			print(inputSplitLine[0]+&quot;,&quot;+inputSplitLine[1]+&quot;,&quot;+inputSplitLine[2]);
+		} else {
+			print(line);
+		}
+	}
+}
+
+f.close();
+br.close();
+
+f = new FileOutputStream(vars.get(&quot;outputFileName&quot;), true);
+p = new PrintStream(f); 
+this.interpreter.setOut(p); 
+print(&quot;&quot;);
+f.close();
+new File(vars.get(&quot;outputFileName&quot;)).delete();
+</stringProp>
+          </BeanShellPostProcessor>
+          <hashTree/>
+        </hashTree>
+        <WhileController guiclass="WhileControllerGui" testclass="WhileController" testname="While Controller - Iterate each row in CSV" enabled="true">
+          <stringProp name="WhileController.condition">true</stringProp>
+        </WhileController>
+        <hashTree>
+          <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config" enabled="true">
+            <stringProp name="filename">${intermediateFileName}</stringProp>
+            <stringProp name="fileEncoding"></stringProp>
+            <stringProp name="variableNames">relationshipNumber,jsonKey,objectEnum</stringProp>
+            <boolProp name="ignoreFirstLine">false</boolProp>
+            <stringProp name="delimiter">,</stringProp>
+            <boolProp name="quotedData">false</boolProp>
+            <boolProp name="recycle">false</boolProp>
+            <boolProp name="stopThread">true</boolProp>
+            <stringProp name="shareMode">shareMode.all</stringProp>
+          </CSVDataSet>
+          <hashTree/>
+          <CounterConfig guiclass="CounterConfigGui" testclass="CounterConfig" testname="Counter" enabled="true">
+            <stringProp name="CounterConfig.start">1</stringProp>
+            <stringProp name="CounterConfig.end"></stringProp>
+            <stringProp name="CounterConfig.incr">1</stringProp>
+            <stringProp name="CounterConfig.name">counter</stringProp>
+            <stringProp name="CounterConfig.format"></stringProp>
+            <boolProp name="CounterConfig.per_user">false</boolProp>
+          </CounterConfig>
+          <hashTree/>
+          <kg.apc.jmeter.samplers.DummySampler guiclass="kg.apc.jmeter.samplers.DummySamplerGui" testclass="kg.apc.jmeter.samplers.DummySampler" testname="Initialize Count Of Results" enabled="true">
+            <boolProp name="WAITING">true</boolProp>
+            <boolProp name="SUCCESFULL">true</boolProp>
+            <stringProp name="RESPONSE_CODE">200</stringProp>
+            <stringProp name="RESPONSE_MESSAGE">OK</stringProp>
+            <stringProp name="REQUEST_DATA">Dummy Sampler used to simulate requests and responses
+without actual network activity. This helps debugging tests.</stringProp>
+            <stringProp name="RESPONSE_DATA">Dummy Sampler used to simulate requests and responses
+without actual network activity. This helps debugging tests.</stringProp>
+            <stringProp name="RESPONSE_TIME">${__Random(50,500)}</stringProp>
+            <stringProp name="LATENCY">${__Random(1,50)}</stringProp>
+            <stringProp name="CONNECT">${__Random(1,5)}</stringProp>
+          </kg.apc.jmeter.samplers.DummySampler>
+          <hashTree>
+            <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell PostProcessor" enabled="true">
+              <boolProp name="resetInterpreter">false</boolProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="script">//log.info(&quot;Object Enum: &quot;+vars.get(&quot;objectEnum&quot;));
+vars.put(&quot;countOfResults&quot;,&quot;0&quot;);</stringProp>
+            </BeanShellPostProcessor>
+            <hashTree/>
+          </hashTree>
+          <IfController guiclass="IfControllerPanel" testclass="IfController" testname="If Object or Enum is specified" enabled="true">
+            <stringProp name="IfController.condition">&quot;${objectEnum}&quot;!=&quot;&quot;</stringProp>
+            <boolProp name="IfController.evaluateAll">false</boolProp>
+          </IfController>
+          <hashTree>
+            <kg.apc.jmeter.samplers.DummySampler guiclass="kg.apc.jmeter.samplers.DummySamplerGui" testclass="kg.apc.jmeter.samplers.DummySampler" testname="Identify if this is an Object or Enum" enabled="true">
+              <boolProp name="WAITING">true</boolProp>
+              <boolProp name="SUCCESFULL">true</boolProp>
+              <stringProp name="RESPONSE_CODE">200</stringProp>
+              <stringProp name="RESPONSE_MESSAGE">OK</stringProp>
+              <stringProp name="REQUEST_DATA">Dummy Sampler used to simulate requests and responses
+without actual network activity. This helps debugging tests.</stringProp>
+              <stringProp name="RESPONSE_DATA">Dummy Sampler used to simulate requests and responses
+without actual network activity. This helps debugging tests.</stringProp>
+              <stringProp name="RESPONSE_TIME">${__Random(50,500)}</stringProp>
+              <stringProp name="LATENCY">${__Random(1,50)}</stringProp>
+              <stringProp name="CONNECT">${__Random(1,5)}</stringProp>
+            </kg.apc.jmeter.samplers.DummySampler>
+            <hashTree>
+              <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell PostProcessor" enabled="true">
+                <boolProp name="resetInterpreter">false</boolProp>
+                <stringProp name="parameters"></stringProp>
+                <stringProp name="filename"></stringProp>
+                <stringProp name="script">String objectEnum = vars.get(&quot;objectEnum&quot;);
+String[] objectEnumSplit = objectEnum.split(&quot;\\.&quot;);
+String objectEnumType;
+if (objectEnumSplit.length&gt;1){
+	objectEnumType = &quot;object&quot;;
+	vars.put(&quot;objectName&quot;,objectEnumSplit[0]);
+	vars.put(&quot;objectAttribute&quot;,objectEnumSplit[1]);
+} else 
+	objectEnumType=&quot;enum&quot;;
+
+vars.put(&quot;objectEnumType&quot;,objectEnumType);
+vars.put(&quot;countOfResults&quot;,&quot;0&quot;);</stringProp>
+              </BeanShellPostProcessor>
+              <hashTree/>
+            </hashTree>
+            <IfController guiclass="IfControllerPanel" testclass="IfController" testname="If this is an Object" enabled="true">
+              <stringProp name="IfController.condition">&quot;${objectEnumType}&quot;==&quot;object&quot;</stringProp>
+              <boolProp name="IfController.evaluateAll">false</boolProp>
+            </IfController>
+            <hashTree>
+              <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="Get Combination Values for Object" enabled="true">
+                <stringProp name="dataSource">linearExpansion</stringProp>
+                <stringProp name="query">select combinationId,objectValue from combinations c,objectValues ov where c.FK_objectId=(select objectId from objects where objectName=&apos;${objectName}&apos; and isActive=1) and c.FK_objectAttributeId=(select objectAttributeId from objectAttributes where FK_objectId=(select objectId from objects where objectName=&apos;${objectName}&apos; and isActive=1) and objectAttribute=&apos;${objectAttribute}&apos; and isActive=1) and c.isActive=1 and c.FK_objectValueId = ov.objectValueId;</stringProp>
+                <stringProp name="queryArguments"></stringProp>
+                <stringProp name="queryArgumentsTypes"></stringProp>
+                <stringProp name="queryTimeout"></stringProp>
+                <stringProp name="queryType">Select Statement</stringProp>
+                <stringProp name="resultSetHandler">Store as String</stringProp>
+                <stringProp name="resultVariable">resultSet</stringProp>
+                <stringProp name="variableNames">combinationId,objectValue</stringProp>
+              </JDBCSampler>
+              <hashTree>
+                <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="Count of Results" enabled="true">
+                  <boolProp name="resetInterpreter">false</boolProp>
+                  <stringProp name="parameters"></stringProp>
+                  <stringProp name="filename"></stringProp>
+                  <stringProp name="script">int countOfResults = Integer.parseInt(vars.get(&quot;combinationId_#&quot;));
+vars.put(&quot;countOfResults&quot;,String.valueOf(countOfResults));
+//for (int i=1;i&lt;=countOfResults;i++) {
+//	log.info(&quot;Object Value: &quot;+vars.get(&quot;objectValue_&quot;+String.valueOf(i)));
+//}
+</stringProp>
+                </BeanShellPostProcessor>
+                <hashTree/>
+              </hashTree>
+            </hashTree>
+            <IfController guiclass="IfControllerPanel" testclass="IfController" testname="If this is an Enum" enabled="true">
+              <stringProp name="IfController.condition">&quot;${objectEnumType}&quot;==&quot;enum&quot;</stringProp>
+              <boolProp name="IfController.evaluateAll">false</boolProp>
+            </IfController>
+            <hashTree>
+              <JDBCSampler guiclass="TestBeanGUI" testclass="JDBCSampler" testname="Get Enum Values" enabled="true">
+                <stringProp name="dataSource">linearExpansion</stringProp>
+                <stringProp name="query">select objectValue from objectValues where FK_objectAttributeId=(select objectAttributeId from objectAttributes where FK_objectId = (select objectId from objects where objectName=&apos;${objectEnum}&apos; and isActive=1) and isActive=1) and isActive=1</stringProp>
+                <stringProp name="queryArguments"></stringProp>
+                <stringProp name="queryArgumentsTypes"></stringProp>
+                <stringProp name="queryTimeout"></stringProp>
+                <stringProp name="queryType">Select Statement</stringProp>
+                <stringProp name="resultSetHandler">Store as String</stringProp>
+                <stringProp name="resultVariable">resultSet</stringProp>
+                <stringProp name="variableNames">objectValue</stringProp>
+              </JDBCSampler>
+              <hashTree>
+                <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="Count of Results" enabled="true">
+                  <boolProp name="resetInterpreter">false</boolProp>
+                  <stringProp name="parameters"></stringProp>
+                  <stringProp name="filename"></stringProp>
+                  <stringProp name="script">int countOfResults = Integer.parseInt(vars.get(&quot;objectValue_#&quot;));
+vars.put(&quot;countOfResults&quot;,String.valueOf(countOfResults));
+</stringProp>
+                </BeanShellPostProcessor>
+                <hashTree/>
+              </hashTree>
+            </hashTree>
+          </hashTree>
+          <kg.apc.jmeter.samplers.DummySampler guiclass="kg.apc.jmeter.samplers.DummySamplerGui" testclass="kg.apc.jmeter.samplers.DummySampler" testname="Write to file" enabled="true">
+            <boolProp name="WAITING">true</boolProp>
+            <boolProp name="SUCCESFULL">true</boolProp>
+            <stringProp name="RESPONSE_CODE">200</stringProp>
+            <stringProp name="RESPONSE_MESSAGE">OK</stringProp>
+            <stringProp name="REQUEST_DATA">Dummy Sampler used to simulate requests and responses
+without actual network activity. This helps debugging tests.</stringProp>
+            <stringProp name="RESPONSE_DATA">Dummy Sampler used to simulate requests and responses
+without actual network activity. This helps debugging tests.</stringProp>
+            <stringProp name="RESPONSE_TIME">${__Random(50,500)}</stringProp>
+            <stringProp name="LATENCY">${__Random(1,50)}</stringProp>
+            <stringProp name="CONNECT">${__Random(1,5)}</stringProp>
+          </kg.apc.jmeter.samplers.DummySampler>
+          <hashTree>
+            <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell PostProcessor" enabled="true">
+              <boolProp name="resetInterpreter">false</boolProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="script">BufferedReader br = new BufferedReader(new FileReader(vars.get(&quot;intermediateFileName&quot;)));     
+int countOfResults = Integer.parseInt(vars.get(&quot;countOfResults&quot;));
+String line;
+String[] inputSplitLine;
+int internalCounter=1;
+int externalCounter = Integer.parseInt(vars.get(&quot;counter&quot;));
+while ((line=br.readLine())!=null) {
+	inputSplitLine = line.split(&quot;,&quot;);
+	if (externalCounter==internalCounter) {
+		f = new FileOutputStream(vars.get(&quot;outputFileName&quot;), true);
+		p = new PrintStream(f); 
+		this.interpreter.setOut(p); 
+		if (countOfResults==0)
+			print(line);
+		else {
+			String valuesToBeAppended =&quot;,&quot;;
+			for (int i=1;i&lt;=countOfResults;i++) {
+				valuesToBeAppended=valuesToBeAppended.concat(vars.get(&quot;objectValue_&quot;+String.valueOf(i))).concat(&quot;,&quot;);
+			}
+			print(line.concat(valuesToBeAppended));
+		}
+		f.close();
+	}
+	internalCounter++;
+}
+br.close();
+</stringProp>
+            </BeanShellPostProcessor>
+            <hashTree/>
+          </hashTree>
+        </hashTree>
+      </hashTree>
+      <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>true</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>true</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>false</xml>
+            <fieldNames>true</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+            <sentBytes>true</sentBytes>
+            <url>true</url>
+            <threadCounts>true</threadCounts>
+            <idleTime>true</idleTime>
+            <connectTime>true</connectTime>
+          </value>
+        </objProp>
+        <stringProp name="filename"></stringProp>
+      </ResultCollector>
+      <hashTree/>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>
